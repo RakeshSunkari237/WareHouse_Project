@@ -14,16 +14,19 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.app.model.ShipmentType;
+import com.app.model.Uom;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.app")
 @PropertySource("classpath:app.properties")
 @EnableTransactionManagement
-public class AppConfig {
+public class AppConfig implements WebMvcConfigurer {
 
 	@Autowired
 	private Environment env;
@@ -48,7 +51,7 @@ public class AppConfig {
 			LocalSessionFactoryBean sf=new LocalSessionFactoryBean();  
 			sf.setDataSource(dsObj());   sf.setHibernateProperties(props());   
 			/* TODO pass model classes */  
-			sf.setAnnotatedClasses(ShipmentType.class); //Model class names  
+			sf.setAnnotatedClasses(ShipmentType.class,Uom.class); //Model class names  
 			return sf;  
 		}   
 		private Properties props() {   
@@ -80,6 +83,12 @@ public class AppConfig {
 			v.setPrefix(env.getProperty("mvc.prefix")); //location of UI file  
 			v.setSuffix(env.getProperty("mvc.suffix")); //extension of UI file   
 			return v;  
+		} 
+		
+		//6.for static Resources
+		public void addResourceHandler(ResourceHandlerRegistry registry) {
+			registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+			
 		} 
 		
 }

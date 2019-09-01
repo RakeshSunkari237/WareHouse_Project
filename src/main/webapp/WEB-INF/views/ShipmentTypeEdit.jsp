@@ -1,23 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"
-    isELIgnored="false"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 <meta charset="ISO-8859-1">
-<title>ShipmentType Register page</title>
+<title>shipmentType Edit page</title>
 </head>
 <body>
 <div class="container">
+	
 	<div class="card">
+		
 		<div class="card-header bg-primary text-white">
-			<h3>Welcome to ShipmentType Register page</h3>
+			<h3>Welcome to ShipmentTypeEdit Page</h3>
 		</div>
 		
 		<div class="card-body">
-			<form:form action="insert" method="POST" modelAttribute="shipmentType">
+			
+			<form:form action="update" method="POST" modelAttribute="shipmentType">
+			
+				<div class="row">
+					<div class="col-3">
+						<label for="shipmentTypeId">ShipmentType Id</label>
+					</div>
+					<div class="col-3">
+						<form:input path="shipmentTypeId" readOnly="true" />
+					</div>
+				</div>
+				
 				<div class="row">
 					<div class="col-3">
 						<label for="shipmentTypeMode">Shipment Mode</label>
@@ -38,7 +50,7 @@
 							<label for="shipmentTypeCode">Shipment Code</label>
 						</div>
 						<div class="col-3">
-							<form:input path="shipmentTypeCode"/>
+							<form:input path="shipmentTypeCode" readOnly="true"/>
 						</div>
 					</div>
 					
@@ -75,15 +87,15 @@
 						</div>
 					</div>
 				
-				<input type="submit" class= "btn btn-success" value="Register"/>
-				<a href="viewAll" class= "btn btn-success">ViewAll</a>
-			</form:form>
-			
+				<input type="submit" class= "btn btn-success" value="Update"/>
+			</form:form>	
 		</div>
-		<div class="card-footer bg-success text-white">
-		${message}
+		
+		<div class="card-footer">
+		
 		</div>
 	</div>
 </div>
+
 </body>
 </html>

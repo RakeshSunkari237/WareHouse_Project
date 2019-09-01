@@ -13,6 +13,7 @@ public interface IShipmentTypeDao {
 	public ShipmentType getOneShipmentType(Integer shipmentTypeId);
 	public List<ShipmentType> getAllShipmentTypes();
 	
+	public List<Object[]> getShipmentTypeModeCount();
 
 
 }
