@@ -17,41 +17,37 @@ public class ShipmentTypeUtil {
 
 	public void generatePie(String path,List<Object[]> shipmentTypes) {
 		
-		// 1.create DataSet using shipmentTypes
-		DefaultPieDataset dataset=new DefaultPieDataset();
-		for(Object[] ob:shipmentTypes) {
-		dataset.setValue(ob[0].toString(),new Double(ob[1].toString()));
+		//1.creating dataset based on shipment type count
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		for(Object[] d : shipmentTypes) {
+			dataset.setValue(d[0].toString(), new Double(d[1].toString()));
 		}
 		
-		//2.convert to jFree chart using chartFactory
-		JFreeChart chart = ChartFactory.createPieChart3D("ShipmentTypes Modes", dataset);
+		//2.convert data to J FREE CHART using chart factory
+		JFreeChart jFreeChart=ChartFactory.createPieChart3D("Shipment Types Pie Chart", dataset, true, true, false);
 		
-		//3.save ad image using ChartUtils
+		//3.save chart as jpeg image
 		try {
-			ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/ShipmentPie.jpg"), chart, 500, 600);
+			ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/shipmentpie.jpg"), jFreeChart, 250, 250);
 		} catch (IOException e) {
-			System.out.println("Error in Genarate Pie chart");
 			e.printStackTrace();
 		}
-		
 	}
 	
-	public void generateBar(String path,List<Object[]> shipmentTypes) {
+	public void generateBarChart(String path,List<Object[]> shipmentTypes) {
 		
-		//1.create dataset using shipmentTypes
-		DefaultCategoryDataset dataset=new DefaultCategoryDataset();
-		for(Object[] ob:shipmentTypes) {
-		dataset.setValue(new Double(ob[1].toString()), ob[0].toString(), "Shipment Modes Details");
+		//1.create dataset
+		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+		for(Object[] d:shipmentTypes) {
+			dataset.setValue(new Double(d[1].toString()), d[0].toString(), "");
 		}
+		//2.convert data to JFree Chart
+		JFreeChart jFreeChart=ChartFactory.createBarChart("Shipment Types Data", "Shipment Type", "Count", dataset);
 		
-		//2.convert to jFreechart using ChartFactroy
-		JFreeChart chart = ChartFactory.createBarChart("ShipmentTypeModes", "Modes", "count", dataset);
-		
-		//3.save as Image using ChartUtis
+		//3.save as image
 		try {
-		ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/ShipmentBar.jpeg"), chart, 300, 300);
-		}catch(IOException e) {
-			System.out.println("Error in Genarate Bar chart");
+			ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/shipmentbar.jpg"), jFreeChart, 250, 250);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

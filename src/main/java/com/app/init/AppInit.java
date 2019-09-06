@@ -1,10 +1,10 @@
 package com.app.init;
-
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import com.app.config.AppConfig;
 
-public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
@@ -23,5 +23,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
 		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
-
+	
+	
+	
 }

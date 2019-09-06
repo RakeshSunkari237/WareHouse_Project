@@ -78,10 +78,10 @@ public class ShipmentTypeController {
 		// row delete
 		service.deleteShipmentType(shipmentTypeId);
 		//construct msg and send to UI
-		String msg="one shipment details is deleted with id "+shipmentTypeId;
+		String msg="One Shipment details are deleted with id "+shipmentTypeId;
 		map.addAttribute("message", msg);
 		}catch(Exception e) {
-			map.addAttribute("message", "shipment details are not found with id "+shipmentTypeId);
+			map.addAttribute("message", "Shipment details are not found with id "+shipmentTypeId);
 		}
 		//new data
 		List<ShipmentType> shipmentTypes = service.getAllShipmentTypes();
@@ -108,8 +108,8 @@ public class ShipmentTypeController {
 		// call service layer to do Update
 		service.updateShipmentType(shipmentType);
 		
-		//success message
-		map.addAttribute("message", "shipment id "+shipmentType.getShipmentTypeId()+" is successfully updated ");
+		//success messages
+		map.addAttribute("message", "Shipment id "+shipmentType.getShipmentTypeId()+" is successfully updated ");
 		
 		//get new data and send to UI
 		List<ShipmentType> shipmentTypes = service.getAllShipmentTypes();
@@ -173,7 +173,7 @@ public class ShipmentTypeController {
 		System.out.println(path);
 		List<Object[]> shipmentTypes = service.getShipmentTypeModeCount();
 		util.generatePie(path, shipmentTypes);
-		//util.generatePie(path, shipmentTypes);
+		util.generateBarChart(path, shipmentTypes);
 		
 		return "ShipmentTypeCharts";
 	}

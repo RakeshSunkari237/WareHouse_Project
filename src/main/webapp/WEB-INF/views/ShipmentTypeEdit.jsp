@@ -1,41 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    pageEncoding="ISO-8859-1"
+    isELIgnored="false"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 <meta charset="ISO-8859-1">
-<title>shipmentType Edit page</title>
+<title>ShipmentType Edit page</title>
 </head>
 <body>
 <div class="container">
-	
 	<div class="card">
-		
-		<div class="card-header bg-primary text-white">
-			<h3>Welcome to ShipmentTypeEdit Page</h3>
+		<div class="card-header bg-info text-white">
+			<h3>Welcome to ShipmentType Edit page</h3>
 		</div>
 		
 		<div class="card-body">
-			
 			<form:form action="update" method="POST" modelAttribute="shipmentType">
 			
 				<div class="row">
-					<div class="col-3">
+					<div class="col-3"></div>
+					<div class="col-2">
 						<label for="shipmentTypeId">ShipmentType Id</label>
 					</div>
-					<div class="col-3">
-						<form:input path="shipmentTypeId" readOnly="true" />
+					<div class="col-4">
+						<form:input path="shipmentTypeId" class="form-control" readonly="true"/>
 					</div>
 				</div>
 				
+				
 				<div class="row">
-					<div class="col-3">
+					<div class="col-3"></div>
+					<div class="col-2">
 						<label for="shipmentTypeMode">Shipment Mode</label>
 					</div>
-					<div class="col-3">
-						<form:select path="shipmentTypeMode">
+					<div class="col-4">
+						<form:select path="shipmentTypeMode" class="form-control">
 							<form:option value="">-Select</form:option>
 							<form:option value="AIR">Air</form:option>
 							<form:option value="TRUCK">Truck</form:option>
@@ -46,20 +47,22 @@
 				</div>
 					
 					<div class="row">
-						<div class="col-3">
+						<div class="col-3"></div>
+						<div class="col-2">
 							<label for="shipmentTypeCode">Shipment Code</label>
 						</div>
-						<div class="col-3">
-							<form:input path="shipmentTypeCode" readOnly="true"/>
+						<div class="col-4">
+							<form:input path="shipmentTypeCode" class="form-control"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<div class="col-3">
+						<div class="col-3"></div>
+						<div class="col-2">
 							<label for="enableShipment">Enable Shipment</label>
 						</div>
-						<div class="col-3">
-							<form:select path="enableShipment">
+						<div class="col-4">
+							<form:select path="enableShipment" class="form-control">
 								<form:option value="">-Select-</form:option>
 								<form:option value="YES">Yes</form:option>
 								<form:option value="NO">No</form:option>
@@ -68,34 +71,47 @@
 					</div>
 					
 					<div class="row">
-						<div class="col-3">
-							<label for="shipmentTypeGrade">Shipment Grade</label>
+						<div class="col-3"></div>
+						<div class="col-2">
+							<label for="shipmentTypeGrade">Shipment Grade  </label>
 						</div>
-						<div class="col=3">
-							<form:radiobutton path="shipmentTypeGrade" value="A"/>A 
-							<form:radiobutton path="shipmentTypeGrade" value="B"/>B 
-							<form:radiobutton path="shipmentTypeGrade" value="C"/>C
+						<div class="col=4"> &nbsp; &nbsp;
+							<form:radiobutton path="shipmentTypeGrade" value="A" />
+							A 
+							<form:radiobutton path="shipmentTypeGrade" value="B" />
+							B 
+							<form:radiobutton path="shipmentTypeGrade" value="C" />
+							C
 						</div>
 					</div>
 					
 					<div class="row">
-						<div class="col-3">
+						<div class="col-3"></div>
+						<div class="col-2">
 							<label for="descrpition">Description</label>
 						</div>
-						<div class="col-3">
-							<form:textarea path="descrpition"/>
+						<div class="col-4">
+							<form:textarea path="descrpition" class="form-control"/>
 						</div>
 					</div>
-				
-				<input type="submit" class= "btn btn-success" value="Update"/>
-			</form:form>	
+					
+					<br/>
+					<br/>
+				<div class="row">
+					<div class="col-5"></div>
+					<div class="col-2">
+						<input type="submit" class= "btn btn-success" value="Update"/>
+					</div>
+				</div>
+			</form:form>
 		</div>
 		
-		<div class="card-footer">
+		
+		
+		<div class="card-footer bg-secondary text-white">
 		
 		</div>
 	</div>
 </div>
-
 </body>
 </html>

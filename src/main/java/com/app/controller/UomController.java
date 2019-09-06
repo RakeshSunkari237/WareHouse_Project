@@ -41,7 +41,7 @@ public class UomController {
 		return "UomRegister";
 	}
 
-	//2.insert uom data
+	//2.save data
 	@RequestMapping(value="/insert",method=RequestMethod.POST)
 	public String save(@ModelAttribute Uom uom,ModelMap map) {
 
@@ -71,7 +71,7 @@ public class UomController {
 		public String delete(@RequestParam Integer uomId,ModelMap map) {
 			//call service to delete record
 			service.deleteUom(uomId);
-			map.addAttribute("message", "One uom details with id : "+ uomId+" is deleted");
+			map.addAttribute("message", "One Uom details with id : "+ uomId+" is deleted");
 			map.addAttribute("uoms", service.getAllUoms());
 			return "UomData";
 		}

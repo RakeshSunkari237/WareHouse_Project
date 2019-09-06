@@ -18,8 +18,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.app.model.OrderMethod;
 import com.app.model.ShipmentType;
 import com.app.model.Uom;
+import com.app.model.WhUserType;
 
 @Configuration
 @EnableWebMvc
@@ -51,7 +53,7 @@ public class AppConfig implements WebMvcConfigurer {
 			LocalSessionFactoryBean sf=new LocalSessionFactoryBean();  
 			sf.setDataSource(dsObj());   sf.setHibernateProperties(props());   
 			/* TODO pass model classes */  
-			sf.setAnnotatedClasses(ShipmentType.class,Uom.class); //Model class names  
+			sf.setAnnotatedClasses(ShipmentType.class,Uom.class,WhUserType.class,OrderMethod.class); //Model class names  
 			return sf;  
 		}   
 		private Properties props() {   
@@ -85,10 +87,10 @@ public class AppConfig implements WebMvcConfigurer {
 			return v;  
 		} 
 		
-		//6.for static Resources
-		public void addResourceHandler(ResourceHandlerRegistry registry) {
-			registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-			
-		} 
+		@Override
+		public void addResourceHandlers(ResourceHandlerRegistry reg) {
+			reg.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+
+		}
 		
 }

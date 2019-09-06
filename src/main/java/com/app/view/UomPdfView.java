@@ -24,7 +24,7 @@ public class UomPdfView extends AbstractPdfView {
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		//set file name
-		response.addHeader("Content-Dosiposition", "attachment;filename=uom.pdf");
+		response.addHeader("Content-Disposition", "attachment;filename=uom.pdf");
 		
 		//get the data from the model
 		@SuppressWarnings("unchecked")

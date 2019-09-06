@@ -14,8 +14,8 @@
 			<h3>Welcome to ShipmentType Charts page</h3>
 		</div>
 		<div class="body">
-			<img alt="pieChart" src="../resources/images/ShipmentPie.jpg"/>
-			<img alt="barChart" src="../resources/images/ShipmentBar.jpg"/>
+			<img alt="pieChart" src="../resources/images/shipmentpie.jpg" width="500" height="600" />
+			<img alt="barChart" src="../resources/images/shipmentbar.jpg"/>
 		</div>
 	</div>
 </div>

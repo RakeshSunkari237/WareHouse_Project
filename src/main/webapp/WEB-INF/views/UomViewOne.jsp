@@ -14,12 +14,12 @@
 	
 	<div class="card">
 		
-		<div class="card-header bg-primary text-white">
+		<div class="card-header bg-info text-white">
 			<h3>Welcome to Uom View page</h3>
 		</div>
 		
 		<div class="card-body">
-			<table border="1"  class="table table-bordered thead-dark table-hover table-danger bg-light text-succes">
+			<table border="1"  class="table table-bordered thead-dark table-hover  bg-light text-succes">
 				<tr>
 					<th>Uom Id</th><td>${uom.uomId}</td>
 				</tr>
@@ -30,16 +30,38 @@
 					<th>Uom Model</th><td>${uom.uomModel}</td>
 				</tr>
 				<tr>
-					<th>Descrpition</th><td>${uom.uomDescrpition}</td>
+					<th>Description</th><td>${uom.uomDescrpition}</td>
 				</tr>
 			</table>
 		</div>
 		
-		<div class="card-footer">
-			<a href="edit?uomId=${uom.uomId}"  class="btn btn-primary">Edit</a>
-			<a href="delete?uomId=${uom.uomId}"  class="btn btn-danger">Delete</a>
-			<a href="excel?uomId=${uom.uomId}" class="btn btn-info">Excel Export</a>
-			<a href="pdf?uomId=${uom.uomId}" class="btn btn-secondary">Pdf Export</a>
+		<div class="card-footer bg-light text-white">
+			<div class="row">
+				<div class="col-1">
+					<a href="edit?uomId=${uom.uomId}" >
+						<img src="../resources/images/edit.png" height="40" width="40/">
+					</a>
+				</div>
+				<div class="col-1">
+					<a href="delete?uomId=${uom.uomId}" >
+						<img src="../resources/images/delete.png" height="40" width="40"/>
+					</a>
+				</div>
+				<div class="col-1">
+					<a href="excel?uomId=${uom.uomId}" >
+						<img src="../resources/images/excel.png" height="40" width="40" />
+					</a>
+				</div>
+				<div class="col-1">
+					<a href="pdf?uomId=${uom.uomId}" >
+						<img src="../resources/images/pdf.png" height="40" width="40"  />
+					</a>
+				</div>
+			</div>
+			
+			
+			
+			
 		</div>
 	</div>
 	

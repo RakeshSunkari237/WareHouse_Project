@@ -13,10 +13,10 @@
 	
 	<div  class="card">
 		
-		<div class="card-header bg-primary text-white">
+		<div class="card-header bg-info text-white">
 			<div class="row">
 				<div class="col-10">
-				<h3>Welcome to ShipmentTypeView page </h3>
+				<h3>Welcome to ShipmentType View page </h3>
 				</div>
 				<div class="col-2">
 					<a href="register" class="btn btn-info">Register</a>
@@ -25,21 +25,21 @@
 		</div>
 		
 		<div class="card-body">
-			<table border="1"  class="table table-bordered thead-dark table-hover table-danger bg-light text-succes">
+			<table border="1"  class="table table-bordered thead-dark table-hover  bg-light text-success">
 				<tr>
-					<th>shipment Id</th><td>${shipmentType.shipmentTypeId}</td>
+					<th>Shipment Id</th><td>${shipmentType.shipmentTypeId}</td>
 				</tr>
 				<tr>
-					<th>shipment Mode</th><td>${shipmentType.shipmentTypeMode}</td>
+					<th>Shipment Mode</th><td>${shipmentType.shipmentTypeMode}</td>
 				</tr>
 				<tr>
-					<th>shipment Code</th><td>${shipmentType.shipmentTypeCode}</td>
+					<th>Shipment Code</th><td>${shipmentType.shipmentTypeCode}</td>
 				</tr>
 				<tr>
-					<th>Enable</th><td>${shipmentType.enableShipment}</td>
+					<th>Enable Shipment</th><td>${shipmentType.enableShipment}</td>
 				</tr>
 				<tr>
-					<th>shipment Grade</th><td>${shipmentType.shipmentTypeGrade}</td>
+					<th>Shipment Grade</th><td>${shipmentType.shipmentTypeGrade}</td>
 				</tr>
 				<tr>
 					<th>Description</th><td>${shipmentType.descrpition}</td>
@@ -47,14 +47,36 @@
 			</table>
 		</div>
 		
-		<div class="card-footer">
-			<a href="edit?shipmentTypeId=${shipmentType.shipmentTypeId}"  class="btn btn-primary">Edit</a>
-			<a href="delete?shipmentTypeId=${shipmentType.shipmentTypeId}"  class="btn btn-danger">Delete</a>
-			<a href="excel?shipmentTypeId=${shipmentType.shipmentTypeId}" class="btn btn-info">Excel Export</a>
-			<a href="pdf?shipmentTypeId=${shipmentType.shipmentTypeId}" class="btn btn-secondary">Pdf Export</a>
+		<div class="card-footer bg-light text-white">
+			
+			<div class="row">
+				<div class="col-1">
+					<a href="edit?shipmentTypeId=${shipmentType.shipmentTypeId}" >
+						<img src="../resources/images/edit.png" height="40" width="40/">
+					</a>
+				</div>
+				<div class="col-1">
+					<a href="delete?shipmentTypeId=${shipmentType.shipmentTypeId}">
+						<img src="../resources/images/delete.png" height="40" width="40"/>
+					</a>
+				</div>
+				<div class="col-1">
+					<a href="excel?shipmentTypeId=${shipmentType.shipmentTypeId}">
+						<img src="../resources/images/excel.png" height="40" width="40" />
+					</a>
+				</div>
+				<div class="col-1">
+					<a href="pdf?shipmentTypeId=${shipmentType.shipmentTypeId}">
+						<img src="../resources/images/pdf.png" height="40" width="40"  />
+					</a>
+				</div>
+				
+			</div>
+
+				
 		</div>
 	</div>
 	
-</div>
+</div>  
 </body>
 </html>

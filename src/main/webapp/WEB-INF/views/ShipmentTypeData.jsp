@@ -15,10 +15,10 @@
 
 	<div class="card">
 		
-		<div class="card-header bg-primary text-white">
+		<div class="card-header bg-info text-white">
 			<div class="row">
 				<div class="col-10">
-				<h3>Welcome to ShipmentTypeData page </h3>
+				<h3>Welcome to ShipmentType Data page </h3>
 				</div>
 				<div class="col-2">
 					<a href="register" class="btn btn-info">Register</a>
@@ -27,47 +27,66 @@
 		</div>
 		
 		<div class="card-body">
-			<table border="1" class=" table table-bordered thead-dark table-hover table-danger bg-light text-success">
-				<tr>
-					<th>shipment Id</th>
-					<th>shipment Mode</th>
-					<th>shipment Code</th>
-					<th>Enable</th>
+			<table border="1" class=" table table-bordered  table-hover ">
+				<tr class="thead-light text-danger">
+					<th>Shipment Id</th>
+					<th>Shipment Mode</th>
+					<th>Shipment Code</th>
+					<th>Enable Shipment</th>
 					
-					<!-- <th>shipmentTypeGrade</th>
-					<th>Descrpition</th> -->
-					
+					<!-- <th>ShipmentTypeGrade</th>
+					<th>Description</th>
+					 -->
 					<th colspan="4">Operations</th>
+				</tr>
 				<c:forEach items="${list}" var="ob">
-					<tr>
+					<tr class="bg-light">
 						<td><c:out value="${ob.shipmentTypeId}"/></td>
 						<td><c:out value="${ob.shipmentTypeMode}"/></td>
 						<td><c:out value="${ob.shipmentTypeCode}"/></td>
 						<td><c:out value="${ob.enableShipment}"/></td>
 						
-						<%-- td><c:out value="${ob.shipmentTypeGrade}"/></td>
-						<td><c:out value="${ob.descrpition}"/></td> --%>
-						
-						<td><a href="view?shipmentTypeId=${ob.shipmentTypeId}"  class="btn btn-info">View</a></td>
-						<td><a href="edit?shipmentTypeId=${ob.shipmentTypeId}"  class="btn btn-primary">Edit</a></td>
-						<td><a href="delete?shipmentTypeId=${ob.shipmentTypeId}"  class="btn btn-danger">Delete</a></td>
+						<%-- <td><c:out value="${ob.shipmentTypeGrade}"/></td>
+						<td><c:out value="${ob.descrpition}"/></td>
+						 --%>
+						<td><a href="view?shipmentTypeId=${ob.shipmentTypeId}"  >
+							<img src="../resources/images/view.png" height="40" width="40"/>
+							</a>
+						</td >
+						<td><a href="edit?shipmentTypeId=${ob.shipmentTypeId}" >
+							<img src="../resources/images/edit.png" height="40" width="40/">
+							</a>
+						</td>
+						<td><a href="delete?shipmentTypeId=${ob.shipmentTypeId}" >
+							<img src="../resources/images/delete.png" height="40" width="40"/>
+							</a>
+						</td>
 					</tr>
 				
 				</c:forEach>
-				
-				
-				</tr>
 			</table>
 		</div>
 		
-		<div class="card-footer bg-primary text-white">
-		${message}<br><br>
-		<a href="excel" class="btn btn-info">Excel Export</a>
-		<a href="pdf" class="btn btn-secondary">Pdf Export</a>
-		<a href="charts" class= "btn btn-danger">Charts</a>
+		<div class="card-footer bg-light text-danger">
+			<div class="row">
+				<div class="col-4 text-light">
+					${message}
+				</div>
+				<div class="col-7">
+					<a href="excel" >
+						<img src="../resources/images/BulkExcel.png" height="60" width="160" />	
+					</a>
+					<a href="pdf">
+						<img src="../resources/images/BulkPdf.png" height="60" width="160" />
+					</a>
+					<a href="charts" >
+						<img src="../resources/images/charts.png" height="60" width="160" />
+					</a>
+				</div>
+			</div>
 		
-		</div>
 	</div>
+	
 </div>
 </body>
 </html>
